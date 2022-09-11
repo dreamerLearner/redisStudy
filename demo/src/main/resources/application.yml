@@ -1,0 +1,29 @@
+spring:
+  mvc:
+    date-format: "dd/MM/yyyy"
+  thymeleaf:
+    cache: false
+  messages:
+    basename: i18n.login
+  datasource:
+    username: root
+    password: name123456
+    url: jdbc:mysql://localhost:3306/redis_db?useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: 192.168.222.128
+    port: 6379
+    lettuce:
+      pool:
+        max-wait: 1000
+        max-idle: 8
+        min-idle: 0
+        max-active: 8
+server:
+  port: 8081
+mybatis-plus:
+  mapper-locations: mapper/*.xml
+  type-aliases-package: com/dreamer/pojo,com/dreamer/dto
+logging:
+  level:
+    com.dreamer: debug

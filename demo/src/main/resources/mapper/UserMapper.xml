@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dreamer.mapper.UserMapper">
+
+    <select id="getUsers" resultType="UserRDTO">
+        SELECT si.`id` , si.`name` , si.`content` , sd.`number`
+        FROM redis_db.`shop_info`  si JOIN mybatis.`shop_desc` sd
+        ON si.`id`=sd.`id`
+    </select>
+</mapper>
